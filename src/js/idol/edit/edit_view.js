@@ -11,7 +11,8 @@ define([
       template: idolEditTpl,
 
       events: {
-        'click .js-editIdol':   'editIdol'
+        'click .js-editIdol':   'editIdol',
+        'change #imageLink':    'changeImage'
       },
 
       triggers: {
@@ -23,6 +24,12 @@ define([
         e.preventDefault();
         var data = Backbone.Syphon.serialize(this);
         this.trigger('idol:edit', data);
+      },
+
+      changeImage: function(e) {
+        e.preventDefault();
+        var imageLink = $(e.target).val();
+        this.$el.find('.img-responsive').attr('src', imageLink)
       }
     });
 

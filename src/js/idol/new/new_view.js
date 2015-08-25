@@ -12,6 +12,7 @@ define([
 
       events: {
         'click .js-newIdol': 'newIdol',
+        'change #imageLink': 'changeImage'
       },
 
       triggers: {
@@ -22,6 +23,12 @@ define([
         e.preventDefault();
         var data = Backbone.Syphon.serialize(this);
         this.trigger('idol:new', data);
+      },
+
+      changeImage: function(e) {
+        e.preventDefault();
+        var imageLink = $(e.target).val();
+        this.$el.find('.img-responsive').attr('src', imageLink)
       }
     });
 
