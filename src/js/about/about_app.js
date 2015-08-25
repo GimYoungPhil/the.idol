@@ -9,12 +9,15 @@ define([
       appRoutes: {
         'about' : 'showAbout'
       }
-    );
+    });
 
     var API = {
       showAbout: function() {
-
-        }
+        require(['about/show/show_controller'], function(ShowController) {
+          ShowController.showAbout();
+          IdolManager.execute('set:active', 'about');
+        });
+      }
     };
 
     IdolManager.on('about:show', function() {
