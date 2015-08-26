@@ -9,7 +9,11 @@
       </div>
       <div class="form-group">
         <label for="group">소속그룹</label>
-        <input type="text" class="form-control" id="group" name="group" placeholder="소속그룹을 입력하세요." value="<%- group %>">
+        <select class="form-control" name="group">
+          <% _.each(groups, function(group) { %>
+            <option value="<%- group['_id'] %>"><%- group['name'] %></option>
+          <% }) %>
+        </select>
       </div>
       <div class="form-group">
         <label for="height">신장</label>

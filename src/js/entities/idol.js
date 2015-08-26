@@ -23,6 +23,8 @@ define([
       model: Entities.Idol,
       url: apiHolder.idol.index,
 
+      comparator: 'group',
+
       // initialize: function(options) {
       //   options || (options = {});
       // },

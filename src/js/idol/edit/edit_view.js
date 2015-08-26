@@ -20,6 +20,11 @@ define([
         'click .js-listIdol':   'idol:list'
       },
 
+      serializeData: function() {
+        var groups = Marionette.getOption(this, 'groups');
+        return _.extend(this.model.toJSON(), {groups: groups.toJSON()});
+      },
+
       editIdol: function(e) {
         e.preventDefault();
         var data = Backbone.Syphon.serialize(this);

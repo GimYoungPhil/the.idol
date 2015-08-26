@@ -9,11 +9,14 @@ define([
 
       showIdol: function(id) {
 
-        require(['entities/idol'], function() {
+        require(['entities/idol', 'entities/group'], function() {
 
-          var fetchingIdol  = IdolManager.request('idol:entity', id);
+          var fetchingIdol   = IdolManager.request('idol:entity', id);
+          var fetchingGroups = IdolManager.request('group:entities');
 
-          $.when(fetchingIdol).done(function(idol) {
+          $.when(fetchingIdol, fetchingGroups).done(function(idol, groups) {
+
+            idol.set({group: groups.filter({_id: idol.get('group')})[0].get('name')});
 
             var showView = new View.IdolShow({
               model: idol

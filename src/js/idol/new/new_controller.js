@@ -9,27 +9,33 @@ define([
 
       newIdol: function() {
 
-        require(['entities/idol'], function() {
+        require(['entities/idol', 'entities/group'], function() {
 
           var newIdol = IdolManager.request('idol:entity');
+          var fetchingGroups = IdolManager.request('group:entities');
 
-          var newView = new View.IdolNew({
-            model: newIdol
-          });
+          $.when(fetchingGroups).done(function(groups) {
 
-          newView.on('idol:new', function(data) {
-            $.when(newIdol.save(data)).done(function() {
-              IdolManager.trigger('idol:list');
-            }).fail(function() {
-
+            var newView = new View.IdolNew({
+              model: newIdol,
+              groups: groups
             });
-          });
 
-          newView.on('idol:list', function() {
-            IdolManager.trigger('idol:list');
-          });
+            newView.on('idol:new', function(data) {
+              $.when(newIdol.save(data)).done(function() {
+                IdolManager.trigger('idol:list');
+              }).fail(function() {
 
-          IdolManager.regions.main.show(newView);
+              });
+            });
+
+            newView.on('idol:list', function() {
+              IdolManager.trigger('idol:list');
+            });
+
+            IdolManager.regions.main.show(newView);
+
+          });
         });
       }
     }

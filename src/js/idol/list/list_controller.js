@@ -10,11 +10,16 @@ define([
 
       listIdol: function() {
 
-        require(['entities/idol'], function() {
+        require(['entities/idol', 'entities/group'], function() {
 
           var fetchingIdols  = IdolManager.request('idol:entities');
+          var fetchingGroups = IdolManager.request('group:entities');
 
-          $.when(fetchingIdols).done(function(idols) {
+          $.when(fetchingIdols, fetchingGroups).done(function(idols, groups) {
+
+            idols.each(function(idol, index) {
+              idol.set({group: groups.filter({_id: idol.get('group')})[0].get('name')});
+            });
 
             var listView = new View.IdolList({
               collection: idols
