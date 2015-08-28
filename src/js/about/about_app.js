@@ -15,7 +15,7 @@ define([
       showAbout: function() {
         require(['about/show/show_controller'], function(ShowController) {
           ShowController.showAbout();
-          IdolManager.execute('set:active', 'about');
+          IdolManager.execute('set:active:header', 'about');
         });
       }
     };

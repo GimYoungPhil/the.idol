@@ -4,9 +4,10 @@
   </div>
   <img src="<%- imageLink %>" alt="" class="img-responsive" />
   <div class="panel-body">
-    <%- name %>
-    <a href="#idols/<%- _id %>" class="btn btn-link js-showIdol">
+    <a href="#idols/<%- _id %>" class="pull-right btn btn-link js-showIdol">
       <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
     </a>
+    <h4><%- name %></h4>
+    <%- height %>cm, <%- weight %>kg
   </div>
 </div>

@@ -15,27 +15,27 @@ define([
 
     var API = {
       listIdol: function() {
-        require(['idol/list/list_controller'], function(ListController) {
+        require(['./list/list_controller'], function(ListController) {
           ListController.listIdol();
-          IdolManager.execute('set:active', 'idols');
+          IdolManager.execute('set:active:header', 'idols');
         });
       },
       newIdol: function() {
-        require(['idol/new/new_controller'], function(NewController) {
+        require(['./new/new_controller'], function(NewController) {
           NewController.newIdol();
-          IdolManager.execute('set:active', 'idols');
+          IdolManager.execute('set:active:header', 'idols');
         });
       },
       showIdol: function(id) {
-        require(['idol/show/show_controller'], function(ShowController) {
+        require(['./show/show_controller'], function(ShowController) {
           ShowController.showIdol(id);
-          IdolManager.execute('set:active', 'idols');
+          IdolManager.execute('set:active:header', 'idols');
         });
       },
       editIdol: function(id) {
-        require(['idol/edit/edit_controller'], function(EditController) {
+        require(['./edit/edit_controller'], function(EditController) {
           EditController.editIdol(id);
-          IdolManager.execute('set:active', 'idols');
+          IdolManager.execute('set:active:header', 'idols');
         });
       }
     };

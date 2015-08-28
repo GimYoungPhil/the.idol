@@ -34,7 +34,7 @@ define([
 
     View.IdolItem = Marionette.ItemView.extend({
       tagName: 'div',
-      className: 'col-xs-12 col-sm-6 col-md-3 col-lg-2',
+      className: 'col-xs-10 col-xs-offset-2 col-sm-4 col-sm-offset-0 col-md-3 col-lg-2',
       template: idolItemTpl,
 
       triggers: {
