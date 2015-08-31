@@ -3,28 +3,6 @@
   "version": "1.0.0",
   "description": "$ npm install -g grunt-cli",
   "main": "Gruntfile.js",
-  "dependencies": {
-    "backbone": "^1.2.2",
-    "backbone.marionette": "^2.4.2",
-    "grunt": "^0.4.5",
-    "grunt-contrib-requirejs": "^0.4.4",
-    "jquery": "^2.1.4",
-    "marionette": "0.0.0",
-    "react": "^0.13.3",
-    "underscore": "^1.8.3",
-    "webpack-dev-server": "^1.10.1"
-  },
-  "devDependencies": {
-    "babel-core": "^5.8.22",
-    "babel-loader": "^5.3.2",
-    "css-loader": "^0.16.0",
-    "style-loader": "^0.12.3",
-    "webpack": "^1.12.0"
-  },
-  "scripts": {
-    "build": "webpack",
-    "dev": "webpack-dev-server"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/GimYoungPhil/the.idol.git"

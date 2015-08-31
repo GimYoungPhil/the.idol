@@ -1,6 +1,6 @@
 define([
   'idolManager.app',
-  'idol/lis/list_view',
+  'idol/list/list_view',
   'common/support/routerHelper'
 ], function(IdolManager, View, routerHelper) {
 
@@ -10,7 +10,7 @@ define([
 
       listIdol: function() {
 
-        require(['./../entities/idol', './../entities/group'], function() {
+        require(['entities/idol', 'entities/group'], function() {
 
           var fetchingIdols  = IdolManager.request('idol:entities');
           var fetchingGroups = IdolManager.request('group:entities');

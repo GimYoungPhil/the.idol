@@ -1,3 +1,1 @@
-
-
-$ npm install -g grunt-cli
+### Gril Group Idols
