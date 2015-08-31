@@ -1,5 +1,5 @@
 var require = {
-  baseUrl: 'js',
+  baseUrl: 'src/js',
 
   paths: {
     'spec': '../spec',

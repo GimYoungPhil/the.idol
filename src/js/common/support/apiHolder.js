@@ -9,11 +9,11 @@ define([
   return {
 
     idol: {
-      index:  devContextPath + '/idols',
+      index:  deplolyContextPath + '/idols',
     },
 
     group: {
-      index:  devContextPath + '/groups'
+      index:  deplolyContextPath + '/groups'
     }
   };
 });
